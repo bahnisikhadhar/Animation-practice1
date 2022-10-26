@@ -1,0 +1,114 @@
+*{
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* start of first animation */
+/* ....................................................................................................... */
+
+.animation1 {
+    margin: 80px;
+    height: 300px;
+    width: 300px;
+    background-color: aqua;
+    transition-duration: 500ms;
+    /* better to use mili second as javascript doesn't accept second */
+    transition-property: background; /*--->see the difference by keeping nd avoiding it*/
+    transition-property: all; /*it may slow the runtime for lowtime screens as we are not specifying which part to get transition*/
+
+}
+.animation1:hover {
+    background-color: lightgreen;
+    transform: rotate(45deg);
+}
+
+/* start of second animation depicting different animation properties */
+/* .......................................................................................................... */
+
+ .animation2 {
+    height: 100vh;
+    width: 100vw;
+}
+.box {
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    padding-top: 70px;
+}
+.one {
+    background-color: aquamarine;
+    animation-name: box1;
+    animation-duration: 2000ms;
+    animation-timing-function: linear;
+    animation-iteration-count: 10;
+    animation-fill-mode: forwards;
+    /* fill-mode is given to define end position of an animation, forwards ends the animation at end point only */
+}
+.two {
+    background-color: lightseagreen;
+    /* animation-name: box1;
+    animation-duration: 2000ms;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 3;
+    animation-fill-mode: forwards; */
+
+    /* Short hand method for all of the above */
+    animation: box1 2000ms ease-in 2s/*animation-delay*/ 3 forwards;
+}
+.three {
+    background-color: lightpink;
+    animation-name: box1;
+    animation-duration: 2000ms;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 5;
+    animation-fill-mode: alternate;
+    /* fill-mode is given to define end position of an animation, alternate ends the animation at starting */
+    animation-direction: alternate; /*alternate-reverse,normal(it's default value) etc */
+}
+.four {
+    background-color: lightcoral;
+    animation-name: box1;
+    animation-duration: 2000ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards; 
+    animation-direction: reverse; 
+}
+@keyframes box1 {
+    from {
+        width: 200px;
+    }
+    to {
+        width: 600px;
+    }
+}
+
+/* Start of third animation */
+/* ..................................................................................................... */
+
+.animation3 {
+    width: 300px;
+    height: 300px;
+    background-color: lightsalmon;
+    margin: 100px;
+    animation-name: bahni;
+    animation-duration: 2000ms;
+    animation-iteration-count: 10;
+    /* animation-fill-mode: forwards; 
+    animation-timing-function: linear; */
+}
+@keyframes bahni {
+    0% {
+        width: 300px;
+    }
+    50% {
+        width: 600px;
+    }
+    75% {
+        width: 300px;
+    }
+    100% {
+        width: 600px;
+    }
+}
+
